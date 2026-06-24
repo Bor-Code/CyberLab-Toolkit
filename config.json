@@ -1,0 +1,7 @@
+{
+  "safe_mode": true,
+  "save_results": true,
+  "default_target": "127.0.0.1",
+  "default_report_path": "reports/cyberlab_report.md",
+  "project_mode": "educational_lab"
+}
