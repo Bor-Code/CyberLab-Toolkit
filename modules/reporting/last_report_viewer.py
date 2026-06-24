@@ -1,7 +1,58 @@
+from pathlib import Path
+
 from app.banner import print_section_title
+from core.constants import DEFAULT_REPORT_PATH
+
+
+def get_report_path(report_path=DEFAULT_REPORT_PATH):
+    return Path(report_path)
+
+
+def read_last_report(report_path=DEFAULT_REPORT_PATH):
+    target = get_report_path(report_path)
+
+    if not target.exists():
+        return None, target
+
+    content = target.read_text(encoding="utf-8")
+
+    if not content.strip():
+        return "", target
+
+    return content, target
+
+
+def print_report_preview(content, max_lines=120):
+    lines = content.splitlines()
+
+    if len(lines) <= max_lines:
+        print(content)
+        return
+
+    for line in lines[:max_lines]:
+        print(line)
+
+    print()
+    print(f"... Output truncated. Showing first {max_lines} lines of {len(lines)} total lines.")
 
 
 def run_last_report_viewer():
-    print_section_title('View Last Report')
-    print('This module will display the latest generated report.')
-    print('Status: Planned for a future PR.')
+    print_section_title("Last Report Viewer")
+    print("This module displays the latest generated Markdown report.")
+    print(f"Default report path: {DEFAULT_REPORT_PATH}")
+    print()
+
+    content, report_path = read_last_report()
+
+    if content is None:
+        print("No report file was found.")
+        print("Generate a report first from Reporting Center -> Generate Markdown Report.")
+        return
+
+    if content == "":
+        print(f"Report file exists but is empty: {report_path}")
+        return
+
+    print(f"Report path: {report_path}")
+    print()
+    print_report_preview(content)
