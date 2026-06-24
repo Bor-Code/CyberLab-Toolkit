@@ -1,0 +1,16 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+.venv/
+venv/
+
+.DS_Store
+Thumbs.db
+
+reports/*.md
+!reports/.gitkeep
+
+fix_placeholders.py
