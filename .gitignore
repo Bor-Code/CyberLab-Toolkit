@@ -13,4 +13,8 @@ Thumbs.db
 reports/*.md
 !reports/.gitkeep
 
+data/*.json
+!data/.gitkeep
+
 fix_placeholders.py
+
