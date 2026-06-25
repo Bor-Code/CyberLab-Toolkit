@@ -1,0 +1,8 @@
+# ip,hostname,mac_vendor,device_type,status,notes
+192.168.1.1,home-router,TP-Link,router,online,Default gateway device
+192.168.1.10,desktop-pc,Intel,workstation,online,Main lab workstation
+192.168.1.15,android-phone,Samsung,mobile,online,Personal mobile device
+192.168.1.20,smart-tv,LG,iot,online,Smart TV on local network
+192.168.1.25,unknown-device,Unknown,unknown,online,Device name and vendor are unknown
+192.168.1.30,printer,Epson,printer,offline,Office printer
+192.168.1.40,lab-vm,VMware,virtual-machine,online,Local cybersecurity lab VM
