@@ -1,0 +1,8 @@
+# CyberLab Toolkit sample TLS / HTTPS observations
+url=https://example.local/login
+tls_version=TLS1.2
+certificate_days_remaining=25
+hsts_enabled=false
+redirects_http_to_https=true
+mixed_content_detected=true
+certificate_trusted=true
