@@ -1,18 +1,35 @@
-APP_NAME = "CyberLab Toolkit"
-APP_SUBTITLE = "Educational Red Team & Blue Team Lab Platform"
+from colorama import init, Fore, Style
+
+init(autoreset=True)
+
+
+BANNER_WIDTH = 88
 
 
 def print_banner():
-    print("=" * 70)
-    print(f"{APP_NAME:^70}")
-    print(f"{APP_SUBTITLE:^70}")
-    print("=" * 70)
-    print("Authorized lab use and cybersecurity education only.")
+    cyberlab_logo = [
+        " ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██╗      █████╗ ██████╗ ",
+        "██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██║     ██╔══██╗██╔══██╗",
+        "██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║     ███████║██████╔╝",
+        "██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██║     ██╔══██║██╔══██╗",
+        "╚██████╗   ██║   ██████╔╝███████╗██║  ██║███████╗██║  ██║██████╔╝",
+        " ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ",
+    ]
+
+    print(Fore.MAGENTA + "=" * BANNER_WIDTH)
+
+    for line in cyberlab_logo:
+        print(Fore.CYAN + Style.BRIGHT + line)
+
+    print()
+    print(Fore.YELLOW + Style.DIM + " " * 62 + "developed by Bor-Code")
+    print(Fore.MAGENTA + "=" * BANNER_WIDTH)
+    print(Fore.LIGHTGREEN_EX + "Authorized lab use and cybersecurity education only.")
     print()
 
 
 def print_section_title(title):
     print()
-    print("-" * 70)
-    print(title)
-    print("-" * 70)
+    print(Fore.MAGENTA + "-" * BANNER_WIDTH)
+    print(Fore.CYAN + Style.BRIGHT + title)
+    print(Fore.MAGENTA + "-" * BANNER_WIDTH)
