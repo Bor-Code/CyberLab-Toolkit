@@ -16,6 +16,7 @@ from app.menu import (
 from modules.reconnaissance.network_discovery import run_network_discovery
 from modules.reconnaissance.dns_lookup import run_dns_lookup
 from modules.reconnaissance.subdomain_simulator import run_subdomain_simulator
+from modules.reconnaissance.recon_report import run_recon_report
 
 from modules.web_security.header_analyzer import run_header_analyzer
 from modules.web_security.cookie_checker import run_cookie_checker
@@ -108,7 +109,7 @@ def route_reconnaissance_lab():
         elif choice == "3":
             run_subdomain_simulator()
         elif choice == "4":
-            print_placeholder("Save Recon Result")
+            run_recon_report()
         elif choice == "0":
             break
         else:
