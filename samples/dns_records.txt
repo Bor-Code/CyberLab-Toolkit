@@ -1,0 +1,10 @@
+# record_type,name,value,ttl,notes
+A,example.local,192.168.1.10,300,Internal lab host
+A,unknown.example.test,203.0.113.25,60,Documentation-range external-looking IP
+A,suspicious-update.example.test,198.51.100.44,30,Low TTL and social engineering keyword
+AAAA,ipv6.example.test,2001:db8::10,300,Documentation IPv6 address
+CNAME,login.example.test,example-cdn.test,300,CDN alias
+MX,example.test,mail.example.test,600,Mail routing
+TXT,example.test,v=spf1 include:_spf.example.test -all,600,SPF policy
+TXT,_dmarc.example.test,v=DMARC1; p=none,600,DMARC monitoring policy
+NS,example.test,ns1.example.test,3600,Nameserver
