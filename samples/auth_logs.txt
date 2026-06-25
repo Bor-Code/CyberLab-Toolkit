@@ -1,0 +1,11 @@
+# CyberLab Toolkit sample authentication log
+2026-06-24T10:00:01Z AUTH_FAILED user=alice ip=10.0.0.12 reason=bad_password
+2026-06-24T10:00:08Z AUTH_FAILED user=alice ip=10.0.0.12 reason=bad_password
+2026-06-24T10:00:15Z AUTH_FAILED user=alice ip=10.0.0.12 reason=bad_password
+2026-06-24T10:01:20Z AUTH_SUCCESS user=alice ip=10.0.0.12 reason=valid_password
+2026-06-24T10:02:01Z AUTH_FAILED user=bob ip=10.0.0.50 reason=bad_password
+2026-06-24T10:02:07Z AUTH_FAILED user=bob ip=10.0.0.50 reason=bad_password
+2026-06-24T10:02:13Z AUTH_FAILED user=bob ip=10.0.0.50 reason=bad_password
+2026-06-24T10:02:20Z AUTH_FAILED user=bob ip=10.0.0.50 reason=bad_password
+2026-06-24T10:03:30Z AUTH_SUCCESS user=admin ip=10.0.0.10 reason=valid_password
+2026-06-24T10:04:30Z AUTH_SUCCESS user=charlie ip=10.0.0.22 reason=valid_password
