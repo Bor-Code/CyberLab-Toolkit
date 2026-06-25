@@ -1,0 +1,7 @@
+# CyberLab Toolkit sample HTTP response headers
+HTTP/1.1 200 OK
+Server: ExampleServer
+Content-Type: text/html; charset=utf-8
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-Frame-Options: SAMEORIGIN
