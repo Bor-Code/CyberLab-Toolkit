@@ -13,6 +13,13 @@ from app.menu import (
     show_settings_menu,
 )
 
+from core.settings import (
+    load_settings,
+    reset_settings,
+    update_setting,
+    format_settings_lines,
+)
+
 from modules.reconnaissance.network_discovery import run_network_discovery
 from modules.reconnaissance.dns_lookup import run_dns_lookup
 from modules.reconnaissance.subdomain_simulator import run_subdomain_simulator
@@ -287,11 +294,11 @@ def route_settings():
         if choice == "1":
             show_current_config()
         elif choice == "2":
-            print_placeholder("Change Default Report Path")
+            change_default_report_path()
         elif choice == "3":
-            print_placeholder("Enable / Disable Save Results")
+            change_save_results_setting()
         elif choice == "4":
-            print_placeholder("Reset Settings")
+            reset_settings_to_default()
         elif choice == "0":
             break
         else:
@@ -320,10 +327,54 @@ def show_legal_notice():
 
 def show_current_config():
     print_section_title("Current Config")
-    print("Config viewer will be implemented in a future PR.")
-    print("Default safe mode: enabled")
-    print("Default target: 127.0.0.1")
-    print("Default report path: reports/cyberlab_report.md")
+    settings = load_settings()
+
+    for line in format_settings_lines(settings):
+        print(line)
+
+
+def change_default_report_path():
+    print_section_title("Change Default Report Path")
+    settings = load_settings()
+
+    print(f"Current default report path: {settings['default_report_path']}")
+    new_path = input("Enter new default report path or press Enter to keep current: ").strip()
+
+    if not new_path:
+        print("Default report path was not changed.")
+        return
+
+    update_setting("default_report_path", new_path)
+    print(f"Default report path updated to: {new_path}")
+
+
+def change_save_results_setting():
+    print_section_title("Enable / Disable Save Results")
+    settings = load_settings()
+
+    print(f"Current save results setting: {settings['save_results']}")
+    answer = input("Save future findings? (y/n): ").strip().lower()
+
+    if answer == "y":
+        update_setting("save_results", True)
+        print("Save results setting enabled.")
+    elif answer == "n":
+        update_setting("save_results", False)
+        print("Save results setting disabled.")
+    else:
+        print("Invalid answer. Setting was not changed.")
+
+
+def reset_settings_to_default():
+    print_section_title("Reset Settings")
+    answer = input("Reset all settings to default values? (y/n): ").strip().lower()
+
+    if answer != "y":
+        print("Settings were not reset.")
+        return
+
+    reset_settings()
+    print("Settings reset to default values.")
 
 
 def print_placeholder(module_name):

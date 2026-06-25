@@ -1,14 +1,17 @@
 from pathlib import Path
 
 from app.banner import print_section_title
-from core.constants import DEFAULT_REPORT_PATH
+from core.settings import get_default_report_path
 
 
-def get_report_path(report_path=DEFAULT_REPORT_PATH):
+def get_report_path(report_path=None):
+    if report_path is None:
+        return get_default_report_path()
+
     return Path(report_path)
 
 
-def read_last_report(report_path=DEFAULT_REPORT_PATH):
+def read_last_report(report_path=None):
     target = get_report_path(report_path)
 
     if not target.exists():
@@ -39,10 +42,11 @@ def print_report_preview(content, max_lines=120):
 def run_last_report_viewer():
     print_section_title("Last Report Viewer")
     print("This module displays the latest generated Markdown report.")
-    print(f"Default report path: {DEFAULT_REPORT_PATH}")
-    print()
 
     content, report_path = read_last_report()
+
+    print(f"Default report path: {report_path}")
+    print()
 
     if content is None:
         print("No report file was found.")
