@@ -276,6 +276,7 @@ Additional documentation is available in the `docs/` directory.
 | `docs/threat_intel_lab.md`            | Threat Intelligence Lab documentation     |
 | `docs/malware_analysis_helper_lab.md` | Malware Analysis Helper Lab documentation |
 | `docs/roadmap.md`                     | Project roadmap                           |
+| `docs/reconnaissance_lab.md`          | Reconnaissance Lab documentation          |                 
 
 ## Roadmap
 
