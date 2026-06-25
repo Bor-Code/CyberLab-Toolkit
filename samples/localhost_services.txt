@@ -1,0 +1,8 @@
+# CyberLab Toolkit sample localhost service observations
+3000,listening,node.exe,React development server
+5173,listening,node.exe,Vite development server
+8000,listening,python.exe,Local HTTP development server
+3306,listening,mysqld.exe,Local MySQL database
+6379,listening,redis-server.exe,Local Redis cache
+9200,stopped,elasticsearch.exe,Elasticsearch service not running
+27017,listening,mongod.exe,Local MongoDB database

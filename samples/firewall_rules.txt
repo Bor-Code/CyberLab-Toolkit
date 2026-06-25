@@ -1,0 +1,9 @@
+# CyberLab Toolkit sample firewall rule observations
+allow,inbound,tcp,80,0.0.0.0/0,public web service
+allow,inbound,tcp,443,0.0.0.0/0,public secure web service
+allow,inbound,tcp,22,0.0.0.0/0,ssh open to all
+allow,inbound,tcp,3389,0.0.0.0/0,rdp open to all
+allow,inbound,tcp,3306,0.0.0.0/0,database open to all
+allow,inbound,tcp,6379,127.0.0.1/32,local redis only
+deny,inbound,tcp,445,0.0.0.0/0,smb blocked
+allow,outbound,tcp,443,0.0.0.0/0,standard outbound https
