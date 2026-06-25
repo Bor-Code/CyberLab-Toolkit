@@ -1,0 +1,15 @@
+# CyberLab Toolkit sample file names
+invoice.pdf
+invoice.pdf.exe
+photo.jpg.scr
+update.exe
+document.docm
+report.docx
+setup.tmp.exe
+bank_statement.pdf
+readme.txt
+payload.bat
+archive.zip
+system_update.ps1
+holiday_photo.png
+report_final.pdf.lnk
