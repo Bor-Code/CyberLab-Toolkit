@@ -6,9 +6,27 @@ from core.finding import Finding
 from core.risk_score import summarize_risk
 
 
+def get_settings_findings_path():
+    try:
+        from core.settings import get_default_findings_path
+
+        return get_default_findings_path()
+    except Exception:
+        return DEFAULT_FINDINGS_PATH
+
+
+def can_save_results():
+    try:
+        from core.settings import is_save_results_enabled
+
+        return is_save_results_enabled()
+    except Exception:
+        return True
+
+
 def get_path(path):
     if path is None:
-        return DEFAULT_FINDINGS_PATH
+        return get_settings_findings_path()
 
     return Path(path)
 
@@ -36,6 +54,9 @@ def load_findings(path=None):
 
 
 def save_findings(findings, path=None):
+    if not can_save_results():
+        return get_path(path)
+
     target = get_path(path)
     ensure_parent_directory(target)
 
@@ -56,6 +77,9 @@ def save_findings(findings, path=None):
 
 
 def append_finding(finding, path=None):
+    if not can_save_results():
+        return finding
+
     findings = load_findings(path)
     findings.append(finding)
     save_findings(findings, path)

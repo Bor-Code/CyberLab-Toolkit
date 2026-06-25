@@ -1,0 +1,6 @@
+# CyberLab Toolkit simulated known subdomains
+www.example.test
+mail.example.test
+api.example.test
+dev.example.test
+support.example.test

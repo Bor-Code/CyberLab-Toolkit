@@ -2,23 +2,36 @@ from pathlib import Path
 
 from app.banner import print_section_title
 from core.constants import DEFAULT_FINDINGS_PATH, DEFAULT_REPORT_PATH
+from core.settings import get_default_findings_path, get_default_report_path
+
+
+def add_unique_target(targets, path):
+    target = Path(path)
+
+    if target not in targets:
+        targets.append(target)
 
 
 def get_cleanup_targets():
     targets = []
 
-    findings_path = Path(DEFAULT_FINDINGS_PATH)
-    report_path = Path(DEFAULT_REPORT_PATH)
+    settings_findings_path = get_default_findings_path()
+    settings_report_path = get_default_report_path()
 
-    targets.append(findings_path)
-    targets.append(report_path)
+    add_unique_target(targets, settings_findings_path)
+    add_unique_target(targets, settings_report_path)
+    add_unique_target(targets, DEFAULT_FINDINGS_PATH)
+    add_unique_target(targets, DEFAULT_REPORT_PATH)
 
-    reports_dir = report_path.parent
+    report_directories = {
+        settings_report_path.parent,
+        Path(DEFAULT_REPORT_PATH).parent,
+    }
 
-    if reports_dir.exists():
-        for item in reports_dir.glob("*.md"):
-            if item not in targets:
-                targets.append(item)
+    for reports_dir in report_directories:
+        if reports_dir.exists():
+            for item in reports_dir.glob("*.md"):
+                add_unique_target(targets, item)
 
     return targets
 
@@ -50,6 +63,8 @@ def run_clear_reports():
     print("This module removes generated local lab output files.")
     print()
     print("It may delete:")
+    print(f"- {get_default_findings_path()}")
+    print(f"- {get_default_report_path()}")
     print(f"- {DEFAULT_FINDINGS_PATH}")
     print(f"- {DEFAULT_REPORT_PATH}")
     print("- Additional Markdown files inside the reports directory")

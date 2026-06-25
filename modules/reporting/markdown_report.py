@@ -1,9 +1,9 @@
 from pathlib import Path
 
 from app.banner import print_section_title
-from core.constants import DEFAULT_FINDINGS_PATH, DEFAULT_REPORT_PATH
 from core.report_store import load_findings
 from core.risk_score import calculate_finding_score, summarize_risk
+from core.settings import get_default_findings_path, get_default_report_path
 
 
 def format_list(items):
@@ -111,7 +111,13 @@ def build_markdown_report(findings):
     return "\n".join(lines)
 
 
-def write_markdown_report(findings_path=DEFAULT_FINDINGS_PATH, report_path=DEFAULT_REPORT_PATH):
+def write_markdown_report(findings_path=None, report_path=None):
+    if findings_path is None:
+        findings_path = get_default_findings_path()
+
+    if report_path is None:
+        report_path = get_default_report_path()
+
     findings = load_findings(findings_path)
     report_content = build_markdown_report(findings)
 
@@ -119,18 +125,18 @@ def write_markdown_report(findings_path=DEFAULT_FINDINGS_PATH, report_path=DEFAU
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(report_content, encoding="utf-8")
 
-    return target, len(findings)
+    return target, len(findings), Path(findings_path)
 
 
 def run_markdown_report():
     print_section_title("Generate Markdown Report")
     print("This module generates a Markdown report from local lab findings.")
-    print(f"Findings source: {DEFAULT_FINDINGS_PATH}")
-    print(f"Report output: {DEFAULT_REPORT_PATH}")
+
+    report_path, finding_count, findings_path = write_markdown_report()
+
+    print(f"Findings source: {findings_path}")
+    print(f"Report output: {report_path}")
     print()
-
-    report_path, finding_count = write_markdown_report()
-
     print("Markdown report generated successfully.")
     print(f"Findings included: {finding_count}")
     print(f"Report path: {report_path}")
