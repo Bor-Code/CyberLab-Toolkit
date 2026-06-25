@@ -1,0 +1,16 @@
+# CyberLab Toolkit simulated subdomain wordlist
+www
+mail
+admin
+login
+portal
+vpn
+dev
+staging
+test
+api
+backup
+db
+cdn
+files
+support
