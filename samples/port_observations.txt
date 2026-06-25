@@ -1,0 +1,9 @@
+# CyberLab Toolkit sample port observations
+22,tcp,open,ssh,admin access
+80,tcp,open,http,web service
+443,tcp,open,https,secure web service
+3389,tcp,open,rdp,remote desktop
+445,tcp,open,smb,file sharing
+3306,tcp,open,mysql,database
+5432,tcp,closed,postgresql,database
+8080,tcp,open,http-alt,development web service
