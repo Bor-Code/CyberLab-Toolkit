@@ -1,0 +1,12 @@
+# CyberLab Toolkit sample domain indicators
+example.com
+login.example.com
+secure-login.example.net
+xn--exmple-cua.com
+very.long.subdomain.chain.example.org
+malware-download.test
+localhost
+internal.local
+192.168.1.10
+bad_domain
+example
