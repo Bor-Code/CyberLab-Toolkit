@@ -1,0 +1,3 @@
+CyberLab Toolkit safe sample file.
+This file is used only for local hash calculation practice.
+It is not malware and it is not executed.
