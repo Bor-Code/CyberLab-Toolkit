@@ -1,0 +1,10 @@
+# CyberLab Toolkit sample URLs
+https://example.com/login
+http://example.com/login
+https://secure-login.example.com.verify-account.example.net/session
+https://example.com/download/update.exe
+https://example.com/login?user=admin&redirect=http%3A%2F%2Fevil.test&token=abc123
+https://192.168.1.10/admin
+https://example.com/../../etc/passwd
+https://xn--exmple-cua.com/login
+https://example.com/reset-password?email=test@example.com&code=123456&next=/dashboard

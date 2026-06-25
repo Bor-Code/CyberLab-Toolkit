@@ -1,0 +1,5 @@
+# CyberLab Toolkit sample Set-Cookie headers
+Set-Cookie: sessionid=abc123; Path=/; HttpOnly; Secure; SameSite=Lax
+Set-Cookie: remember_me=true; Path=/; Max-Age=2592000
+Set-Cookie: csrftoken=token123; Path=/; SameSite=Strict
+Set-Cookie: tracking_id=track-001; Path=/; SameSite=None
