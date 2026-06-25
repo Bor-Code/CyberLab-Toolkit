@@ -1,0 +1,13 @@
+# CyberLab Toolkit sample static indicators
+filename,invoice.pdf.exe
+extension,.exe
+hash_sha256,275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f
+string,powershell -enc
+string,cmd.exe /c
+string,http://example.test/payload
+string,CreateRemoteThread
+string,VirtualAlloc
+import,WinInet
+import,WS2_32
+section,.text
+section,.rsrc

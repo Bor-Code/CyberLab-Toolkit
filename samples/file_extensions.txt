@@ -1,0 +1,21 @@
+# CyberLab Toolkit sample extensions
+.exe
+.dll
+.scr
+.bat
+.cmd
+.ps1
+.vbs
+.js
+.jar
+.lnk
+.docm
+.xlsm
+.pdf
+.docx
+.txt
+.png
+.zip
+.iso
+.tmp
+.unknown
