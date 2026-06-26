@@ -1,4 +1,19 @@
-﻿# CyberLab Toolkit
+﻿# 🚨⚠️⛔ IMPORTANT SAFETY WARNING ⛔⚠️🚨
+
+> **PLEASE USE THIS PROJECT ONLY IN YOUR OWN LOCAL ENVIRONMENT FOR EDUCATIONAL AND DEFENSIVE PURPOSES.**
+>
+> Do **not** use this toolkit against any third-party system, network, service, website, account, device, or vulnerability.
+>
+> Unauthorized scanning, testing, brute-force attempts, exploitation, vulnerability validation, real target analysis, or use against systems you do not own or do not have explicit permission to test is strictly discouraged.
+>
+> This project is designed only for **local sample files, simulations, authorized lab environments, and defensive security practice**.
+>
+> **You are fully responsible for any technical, legal, or ethical consequences resulting from your use of this project.**
+>
+> The developer is not responsible for any unauthorized, illegal, harmful, or improper use of this toolkit.
+
+---
+# CyberLab Toolkit
 
 CyberLab Toolkit is an educational cybersecurity lab platform built for authorized learning, defensive analysis, and portfolio demonstration.
 
@@ -294,3 +309,4 @@ Planned improvements:
 CyberLab Toolkit is for authorized learning, defensive security practice, and portfolio demonstration only.
 
 Do not use this project for unauthorized activity, real-world attacks, malware execution, or scanning systems without permission.
+
