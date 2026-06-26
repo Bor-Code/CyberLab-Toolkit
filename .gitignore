@@ -18,3 +18,4 @@ data/*.json
 
 fix_placeholders.py
 
+config/
